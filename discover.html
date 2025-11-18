@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Discover UMD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --light-pink: #fff0f4;
+      --accent-pink: #ffe6ee;
+      --gold: #c59d1f;
+    }
+
+    body{font-family:'Source Sans Pro',sans-serif;margin:0;padding:2rem;background: linear-gradient(180deg,var(--light-pink) 0%, #ffffff 60%);color:#111;}
+    /* subtle paper texture using a repeating radial gradient */
+    body::before{
+      content:"";
+      position:fixed;left:0;right:0;top:0;bottom:0;
+      background-image: radial-gradient(rgba(0,0,0,0.02) 0.6px, transparent 0.6px);
+      background-size: 8px 8px;
+      pointer-events:none;opacity:0.6;
+    }
+
+    .wrap{max-width:900px;margin:0 auto}
+    header{display:flex;align-items:center;gap:1rem}
+    header h1{font-family:'Playfair Display',serif;margin:0;font-size:2rem}
+    .section{background:linear-gradient(180deg,var(--accent-pink),#fff);border:1px solid rgba(0,0,0,0.06);padding:1rem;border-radius:10px;margin-top:1rem}
+    .section h2{color:#111}
+    .muted{color:#666;font-size:0.95rem}
+    .video{margin-top:1rem}
+    .tips{background:#fff8f9;border-left:4px solid var(--gold);padding:0.75rem;margin-top:0.75rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Discover UMD & Duluth</h1>
+      <div class="muted">Short guide & 30-second marketing video for team use</div>
+    </header>
+
+    <section class="section">
+      <h2>Why I Chose the University of Minnesota Duluth</h2>
+      <p>I chose the University of Minnesota Duluth because I’m playing collegiate hockey here, and I absolutely love the program. The rink is incredible—one of the best facilities I’ve ever played in—and being part of the team has been an amazing experience.</p>
+    </section>
+
+    <section class="section">
+      <h2>What I Like About Duluth</h2>
+      <p>I love Duluth, especially in the fall when all the leaves change color. The scenery around Lake Superior is beautiful, and there are so many great local restaurants to explore. The lake is one of my favorite spots—it’s peaceful and a great place to relax or hang out with friends.</p>
+    </section>
+
+    <section class="section video">
+      <h2>30‑second UMD marketing video (team-friendly)</h2>
+      <p class="muted">Use this short clip in team presentations or on social pages. It’s kept to 30 seconds so the entire group can use the same asset without edits.</p>
+      <div class="video">
+        <video controls playsinline width="100%" poster="media/IMG_5762.jpg">
+          <source src="videos/umd-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="tips">
+        <strong>Team notes:</strong> This clip is intended to be reused as-is. If you need a trimmed 30s segment, open the video in any editor (QuickTime on Mac or the free Avidemux) and export a MP4 H.264. For captions, add a single SRT file named <code>umd-video.srt</code> in the same folder.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Personal Experiences and Campus Highlights</h2>
+      <p>Being a student-athlete at UMD has been a dream come true. Outside of hockey, I’ve made a lot of great memories—like going swimming in the lake with my teammates and grabbing ice cream at Love Creamery. The community here is supportive, the campus is beautiful, and there’s always something to do.</p>
+    </section>
+
+    <footer class="muted" style="margin-top:1rem">Need any edits or a different tone? Tell me if you want the copy shorter or more personal.</footer>
+  </div>
+</body>
+</html>

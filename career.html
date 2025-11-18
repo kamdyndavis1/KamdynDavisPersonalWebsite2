@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Career Targets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#0b0b0b;
+      --white:#ffffff;
+      --gold:#c59d1f;
+      --light-pink:#ffeef4;
+      --cheetah: radial-gradient(circle at 18% 18%, rgba(0,0,0,0.95) 0 10%, transparent 10%), radial-gradient(circle at 70% 28%, rgba(0,0,0,0.95) 0 10%, transparent 10%), radial-gradient(circle at 40% 68%, rgba(0,0,0,0.95) 0 10%, transparent 10%), radial-gradient(circle at 80% 78%, rgba(0,0,0,0.95) 0 10%, transparent 10%), radial-gradient(circle at 50% 40%, rgba(0,0,0,0.85) 0 12%, transparent 12%), radial-gradient(circle at 30% 80%, rgba(0,0,0,0.85) 0 12%, transparent 12%), linear-gradient(180deg, #f5eee8, #f1e6dd);
+    }
+
+    body{font-family:'Source Sans Pro',sans-serif;margin:0;padding:2rem;background:linear-gradient(180deg,var(--light-pink),#fff);color:var(--black)}
+    .container{max-width:1000px;margin:0 auto}
+    header{display:flex;align-items:center;gap:1rem}
+    header h1{font-family:'Playfair Display',serif;margin:0;font-size:2rem}
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1rem}
+
+    .company{
+      background:var(--white);
+      border-radius:12px;
+      padding:1rem;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:0 8px 24px rgba(0,0,0,0.06);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .company::after{
+      content: "";
+      position:absolute;right:-30px;top:-30px;width:220px;height:220px;background-image:var(--cheetah);opacity:0.12;transform:rotate(18deg);
+    }
+
+  .company h2{margin:0 0 0.25rem 0;font-size:1.4rem;letter-spacing:0.6px}
+    .muted{color:#666}
+
+  .contact{background:linear-gradient(90deg,var(--light-pink),#fff);padding:0.6rem;border-radius:8px;margin-top:0.5rem;border:1px solid rgba(0,0,0,0.04)}
+
+  .cta{display:flex;gap:0.5rem;margin-top:0.6rem}
+  .btn{background:var(--black);color:var(--white);padding:0.45rem 0.65rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem}
+  .btn.secondary{background:transparent;color:var(--black);border:1px solid rgba(0,0,0,0.08)}
+  .download{background:var(--gold);color:#fff}
+
+    .section-title{display:flex;align-items:center;gap:0.5rem}
+    .label{background:var(--black);color:var(--white);padding:0.25rem 0.5rem;border-radius:6px;font-size:0.85rem}
+
+    .qual{margin-top:0.5rem}
+    footer{margin-top:1.25rem;color:#666;text-align:center}
+
+    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Target Companies</h1>
+      <div class="muted">Stryker — Medical Sales · NHL — Team Management</div>
+    </header>
+
+    <div class="grid">
+      <article class="company">
+        <div class="section-title"><span class="label">1</span><h2>Stryker — Medical Sales</h2></div>
+        <div class="contact">
+          <strong>Stryker Corporation</strong><br>
+          1941 Stryker Way<br>
+          Portage, MI 49002<br>
+          Website: <a href="https://www.stryker.com" target="_blank">www.stryker.com</a><br>
+          Phone: (269) 385-2600
+          <div class="cta">
+            <a class="btn" href="https://www.stryker.com" target="_blank" rel="noopener">Visit Stryker</a>
+            <a class="btn secondary" href="#apply-stryker">Apply / Learn More</a>
+            <a class="btn download" href="files/resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <h3 style="margin-top:0.75rem">Why I Like This Role</h3>
+        <p>I’m interested in working for Stryker because I’ve always been passionate about the medical field and helping others. A career in medical sales allows me to make a real difference in people’s lives by connecting healthcare professionals with innovative products that improve patient outcomes. I’m drawn to Stryker’s reputation for excellence, teamwork, and innovation in medical technology.</p>
+
+  <h3>Why I’m Qualified</h3>
+        <p class="qual">I’m a very caring and personable individual who enjoys working with people and building strong relationships—skills that are essential for success in sales. I’m hardworking, motivated, and confident in my ability to communicate clearly and effectively. My dedication and positive attitude would make me a strong fit for a medical sales role.</p>
+
+  <h3>How My Skills Align</h3>
+  <div id="apply-stryker" style="margin-top:0.6rem" class="muted">Prepared to provide references and a tailored cover letter upon request.</div>
+        <p>Stryker values employees who are caring, outgoing, and hard-working. I share those qualities and bring strong communication, leadership, and teamwork skills that I’ve developed through sports and academics. My passion for healthcare and helping others aligns perfectly with Stryker’s mission to make healthcare better.</p>
+      </article>
+
+      <article class="company">
+        <div class="section-title"><span class="label">2</span><h2>NHL — Team Management</h2></div>
+        <div class="contact">
+          <strong>National Hockey League (NHL) Headquarters</strong><br>
+          1185 Avenue of the Americas<br>
+          New York, NY 10036<br>
+          Website: <a href="https://www.nhl.com" target="_blank">www.nhl.com</a><br>
+          Phone: (212) 789-2000
+          <div class="cta">
+            <a class="btn" href="https://www.nhl.com" target="_blank" rel="noopener">Visit NHL</a>
+            <a class="btn secondary" href="#apply-nhl">Explore Roles</a>
+            <a class="btn download" href="files/resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <h3 style="margin-top:0.75rem">Why I Like This Role</h3>
+        <p>Being a manager for an NHL team would be a dream come true for me. I’ve been involved in hockey since I was four years old and have developed a deep understanding of both the game and the business side of sports. Working in team management would allow me to combine my passion for hockey with leadership and strategic decision-making.</p>
+
+        <h3>Why I’m Qualified</h3>
+        <p class="qual">As a lifelong hockey player and current collegiate athlete, I understand the dedication, teamwork, and discipline it takes to succeed in this sport. I have experience working with teams, managing schedules, and communicating effectively. My background gives me valuable insight into what players and organizations need to perform at their best.</p>
+
+  <h3>How My Skills Align</h3>
+  <div id="apply-nhl" style="margin-top:0.6rem" class="muted">Available for informational interviews and willing to relocate for the right opportunity.</div>
+        <p>The NHL values leadership, hard work, and a strong knowledge of the game—all qualities I possess. I’m outgoing, organized, and motivated to make a positive impact in the world of hockey, both on and off the ice. My lifelong connection to the sport gives me the passion and perspective to succeed in a management role.</p>
+      </article>
+    </div>
+
+    <footer>
+      Want this formatted as a printable PDF or a one-page resume-style sheet? I can export or adjust the layout.
+    </footer>
+  </div>
+</body>
+</html>

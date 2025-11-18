@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg-white: #ffffff;
+            --black: #0b0b0b;
+            --gold: #c59d1f; /* warmer gold */
+            --light-pink: #ffeef4;
+            /* cheetah pattern made from layered radial gradients */
+            --cheetah: radial-gradient(circle at 18% 18%, rgba(0,0,0,0.95) 0 10%, transparent 10%),
+                       radial-gradient(circle at 70% 28%, rgba(0,0,0,0.95) 0 10%, transparent 10%),
+                       radial-gradient(circle at 40% 68%, rgba(0,0,0,0.95) 0 10%, transparent 10%),
+                       radial-gradient(circle at 80% 78%, rgba(0,0,0,0.95) 0 10%, transparent 10%),
+                       radial-gradient(circle at 50% 40%, rgba(0,0,0,0.85) 0 12%, transparent 12%),
+                       radial-gradient(circle at 30% 80%, rgba(0,0,0,0.85) 0 12%, transparent 12%),
+                       linear-gradient(180deg, #f5eee8, #f1e6dd);
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--light-pink) 0%, var(--bg-white) 40%);
+            color: var(--black);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .site {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* Top navigation */
+        nav.topbar{
+            display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:0.6rem 1rem;margin-bottom:1rem;background:transparent;
+        }
+
+        .tabs{display:flex;gap:0.5rem}
+        .tab{padding:0.5rem 0.8rem;border-radius:8px;text-decoration:none;color:var(--black);font-weight:600}
+        .tab.active{background:var(--black);color:var(--bg-white)}
+        .brand{font-family:'Playfair Display',serif;font-size:1.1rem}
+
+        header.hero {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(11,11,11,0.02), rgba(11,11,11,0.01));
+            padding: 1.25rem 1.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .headshot {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 4px solid var(--gold);
+            background-image: var(--cheetah);
+            background-size: 140% 140%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .headshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .intro h1{
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            margin: 0;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .intro p.lead{
+            margin: 0.5rem 0 0;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .accent-line{ /* small zebra accent under title */
+            width: 90px;
+            height: 6px;
+            margin-top: 0.75rem;
+            border-radius: 6px;
+            background: var(--zebra);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset;
+        }
+
+        main.content{
+            margin-top: 1.25rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .card{
+            background: var(--bg-white);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 1rem;
+            box-shadow: 0 6px 18px rgba(11,11,11,0.04);
+        }
+
+        .card h3{ margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+
+        .media {
+            width: 100%;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-image: var(--cheetah);
+            background-size: 160% 160%;
+            display:flex;align-items:center;justify-content:center;
+        }
+
+        .media img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+        .video-wrap video{
+            width:100%;
+            height:auto;
+            border-radius:8px;
+            display:block;
+        }
+
+    .thank-you{ text-align:center; margin-top:1rem; font-style:italic; color:var(--gold); }
+
+        footer{ text-align:center; margin-top:1.25rem; color:#666; font-size:0.95rem }
+
+        @media (max-width:780px){
+            header.hero{ grid-template-columns: 110px 1fr }
+            .headshot{ width:110px; height:110px }
+            main.content{ grid-template-columns: 1fr }
+        }
+        html{scroll-behavior:smooth}
+    </style>
+</head>
+<body>
+    <div class="site">
+        <nav class="topbar">
+            <div class="brand">My Portfolio</div>
+            <div class="tabs">
+                <a class="tab active" href="#home">Home</a>
+                <a class="tab" href="#discover">Discover</a>
+                <a class="tab" href="#hobbies">Hobbies</a>
+                <a class="tab" href="#career">Career</a>
+                <a class="tab" href="#resume">Resume</a>
+                <a class="tab" href="#game">Game</a>
+            </div>
+        </nav>
+
+        <header id="home" class="hero">
+            <div class="headshot">
+                <img src="media/IMG_5762.jpg" alt="Professional headshot">
+            </div>
+            <div class="intro">
+                <h1>Welcome to my website</h1>
+                <div class="accent-line"></div>
+                <p class="lead">I'm a dedicated professional with a passion for teamwork, leadership, and continuous growth. I combine discipline from athletics and the calm focus I find on the water to bring energy and reliability to everything I do.</p>
+                <!-- Embedded personal YouTube Short (replaces local MOV) -->
+                <div style="margin-top:1rem;">
+                    <div style="max-width:420px;margin:0 auto;border-radius:8px;overflow:hidden;">
+                        <iframe
+                            src="https://www.youtube.com/embed/L21pQi1saPY?rel=0&modestbranding=1"
+                            title="Personal Welcome Video"
+                            width="100%"
+                            height="640"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p style="text-align:center;color:#666;font-size:0.9rem;margin-top:0.5rem;">If the video doesn’t play here, open it on YouTube: <a href="https://youtube.com/shorts/L21pQi1saPY" target="_blank" rel="noopener">Watch on YouTube</a></p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="discover" class="content" style="margin-top:1.25rem;">
+                <div class="card" style="grid-column:1/-1">
+                    <h3>Discover UMD & Duluth</h3>
+                    <p class="muted">Short guide & 30-second marketing video for team use</p>
+                    <hr />
+                    <h4>Why I Chose the University of Minnesota Duluth</h4>
+                    <p>I chose the University of Minnesota Duluth because I’m playing collegiate hockey here, and I absolutely love the program. The rink is incredible—one of the best facilities I’ve ever played in—and being part of the team has been an amazing experience.</p>
+
+                    <h4>What I Like About Duluth</h4>
+                    <p>I love Duluth, especially in the fall when all the leaves change color. The scenery around Lake Superior is beautiful, and there are so many great local restaurants to explore. The lake is one of my favorite spots—it’s peaceful and a great place to relax or hang out with friends.</p>
+
+                    <h4>Personal Experiences and Campus Highlights</h4>
+                    <p>Being a student-athlete at UMD has been a dream come true. Outside of hockey, I’ve made a lot of great memories—like going swimming in the lake with my teammates and grabbing ice cream at Love Creamery. The community here is supportive, the campus is beautiful, and there’s always something to do.</p>
+
+                    <div class="video-wrap">
+                        <!-- Embedded YouTube Short for UMD welcome video -->
+                        <div style="max-width:420px;margin:0 auto;border-radius:8px;overflow:hidden;">
+                            <iframe
+                                src="https://www.youtube.com/embed/bS1LwXmHqos?rel=0&modestbranding=1"
+                                title="UMD Welcome Video"
+                                width="100%"
+                                height="640"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p style="text-align:center;color:#666;font-size:0.9rem;margin-top:0.5rem;">If the video doesn’t play here, open it on YouTube: <a href="https://youtube.com/shorts/bS1LwXmHqos" target="_blank" rel="noopener">Watch on YouTube</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hobbies" class="content" style="margin-top:1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+                <div class="card">
+                    <h3>Hobby — Hockey</h3>
+                    <div class="media">
+                        <img src="media/hockey_JPG.JPG" alt="Hockey" onerror="this.style.objectFit='contain';this.src='media/IMG_5762.jpg'">
+                    </div>
+                    <p style="margin-top:0.75rem;">Hockey has always been more than just a sport for me—it’s my passion and favorite hobby. Playing hockey allows me to challenge myself physically and mentally while being part of a close-knit team. The fast pace of the game teaches me focus, quick decision-making, and perseverance. I love the feeling of skating on the ice, the teamwork it takes to set up a good play, and the sense of accomplishment after a hard-fought game. Beyond competition, hockey helps me build leadership skills, discipline, and strong friendships that extend off the rink. It’s also a great outlet for stress and keeps me active and healthy. Whether I’m practicing, competing, or coaching younger players, hockey continues to shape who I am and motivates me to work hard in every area of life.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Hobby — Country Concerts</h3>
+                        <div class="media">
+                            <img src="media/country_JPG.JPG" alt="Country Concert" onerror="this.style.objectFit='contain';this.src='media/IMG_5762.jpg'">
+                        </div>
+                        <p style="margin-top:0.75rem;">I love going to country concerts — the energy of the crowd, the storytelling in the music, and the sense of community make live shows unforgettable. Whether it's a large outdoor festival or a smaller venue, I enjoy singing along to favorite songs, discovering new artists, and sharing the experience with friends. Concerts are a great way to unwind and celebrate with people who appreciate the same music.</p>
+                </div>
+            </section>
+
+            <section id="career" class="content" style="margin-top:1.25rem;">
+                <div class="card">
+                    <h3>Career Targets</h3>
+                    <p class="muted">Opportunities I'm pursuing and why</p>
+                    <hr />
+                    <div style="display:grid;grid-template-columns:1fr;gap:1rem">
+                        <div class="company card" style="padding:1rem;">
+                            <h4>Stryker — Medical Sales</h4>
+                            <div class="contact" style="margin-top:0.5rem">
+                                <strong>Stryker Corporation</strong><br>
+                                1941 Stryker Way<br>
+                                Portage, MI 49002<br>
+                                Website: <a href="https://www.stryker.com" target="_blank">www.stryker.com</a><br>
+                                Phone: (269) 385-2600
+                            </div>
+                            <h5 style="margin-top:0.6rem">Why I Like This Role</h5>
+                            <p>I’m interested in working for Stryker because I’ve always been passionate about the medical field and helping others. A career in medical sales allows me to make a real difference in people’s lives by connecting healthcare professionals with innovative products that improve patient outcomes. I’m drawn to Stryker’s reputation for excellence, teamwork, and innovation in medical technology.</p>
+                            <h5>Why I’m Qualified</h5>
+                            <p>I'm caring and personable, with strong communication and relationship-building skills developed through team sports and academic work. I'm hardworking, motivated, and able to communicate clearly—qualities that translate well to medical sales.</p>
+                            <h5>How My Skills Align</h5>
+                            <p>My leadership, teamwork, and communication skills—shaped by athletics and group projects—align with Stryker’s focus on collaboration and patient-centered solutions.</p>
+                        </div>
+
+                        <div class="company card" style="padding:1rem;">
+                            <h4>NHL — Team Management</h4>
+                            <div class="contact" style="margin-top:0.5rem">
+                                <strong>National Hockey League (NHL) Headquarters</strong><br>
+                                1185 Avenue of the Americas<br>
+                                New York, NY 10036<br>
+                                Website: <a href="https://www.nhl.com" target="_blank">www.nhl.com</a><br>
+                                Phone: (212) 789-2000
+                            </div>
+                            <h5 style="margin-top:0.6rem">Why I Like This Role</h5>
+                            <p>Being a manager for an NHL team would be a dream come true for me. I’ve been involved in hockey since I was four years old and have developed a deep understanding of both the game and the business side of sports. Working in team management would allow me to combine my passion for hockey with leadership and strategic decision-making.</p>
+                            <h5>Why I’m Qualified</h5>
+                            <p>As a lifelong hockey player and current collegiate athlete, I understand the dedication, teamwork, and discipline it takes to succeed in this sport. I have experience working with teams, managing schedules, and communicating effectively. My background gives me valuable insight into what players and organizations need to perform at their best.</p>
+                            <h5>How My Skills Align</h5>
+                            <p>The NHL values leadership, hard work, and a strong knowledge of the game—all qualities I possess. I’m outgoing, organized, and motivated to make a positive impact in the world of hockey, both on and off the ice.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resume" class="content" style="margin-top:1.25rem;display:block;">
+                <div class="card">
+                    <h3>Resume & Contact</h3>
+                    <p class="muted">Downloadable resume and quick contact</p>
+                    <div style="margin-top:0.75rem">
+                        <a class="btn" href="files/resume.pdf" download style="background:var(--gold);color:#fff;padding:0.6rem 0.9rem;border-radius:8px;text-decoration:none">Download Resume (PDF)</a>
+                    </div>
+                    <div style="margin-top:0.75rem;color:#333">
+                        <strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+                        <strong>Phone:</strong> (555) 555-5555
+                    </div>
+                </div>
+            </section>
+
+            <section id="game" class="content" style="margin-top:1.25rem;">
+                <div class="card">
+                    <h3>Flappy Bird Game</h3>
+                    <p class="muted">Use the spacebar to control the bird. Press space to start, jump, and restart after game over.</p>
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 1rem;">
+                        <div style="background: linear-gradient(180deg, #1a1a1a, #333); padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                            <canvas id="gameCanvas" width="400" height="400" style="border: 3px solid var(--gold); border-radius: 8px; background-color: #222;"></canvas>
+                        </div>
+                        <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.8rem;">
+                            <!-- Audio controls for game background music -->
+                            <audio id="gameMusic" preload="auto" loop>
+                                <source src="videos/Eldar Kedem - Walking Around.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button id="gameMusicToggle" class="btn" style="background:var(--gold);color:#fff;padding:0.4rem 0.6rem;border-radius:8px;border:none;cursor:pointer">Play Music</button>
+                            <label style="color:#666;font-size:0.9rem;margin-left:0.5rem">Background music: Eldar Kedem — Walking Around</label>
+                        </div>
+                        <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">Try to get the highest score by navigating through the pipes!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            &copy; <span id="year"></span> All rights reserved.
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Tab highlighting
+        const tabs = document.querySelectorAll('.tab');
+        function setActiveTab(){
+            tabs.forEach(t=>t.classList.remove('active'));
+            const currentHash = location.hash || '#home';
+            const active = document.querySelector(`.tab[href="${currentHash}"]`);
+            if(active) active.classList.add('active');
+        }
+        window.addEventListener('hashchange', setActiveTab);
+        window.addEventListener('load', setActiveTab);
+
+        // Confetti: use gold, light pink, and white
+        function fireConfetti(count){
+            confetti({
+                particleCount: count || 80,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#c59d1f', '#ffeef4', '#ffffff'],
+            });
+        }
+        window.addEventListener('load', function(){ fireConfetti(60); });
+        document.addEventListener('click', function(){ fireConfetti(40); });
+    </script>
+    <script src="js/game.js"></script>
+</body>
+</html>
